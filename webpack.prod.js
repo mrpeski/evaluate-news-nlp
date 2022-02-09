@@ -47,7 +47,7 @@ const config = {
                     "css-loader"
                 ],
             },
-            {   test: /\.(j)sx?$/,
+            {   test: /\.js?$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
             }
