@@ -2,6 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import sass from "sass";
 
 const config = {
     mode: 'development',
@@ -42,12 +43,18 @@ const config = {
                 type: 'asset',
             },
             {
-                test: /\.css$/i,
+                test: /\.s[ac]ss$/i,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
                     },
-                    "css-loader"
+                    "css-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            implementation: sass,
+                        },
+                    },
                 ],
             },
             {   test: /\.js?$/,
