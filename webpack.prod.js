@@ -2,6 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import sass from "sass";
 
 const config = {
     mode: 'production',
@@ -21,10 +22,10 @@ const config = {
         new HtmlWebpackPlugin({
             title: "Evaluate News",
             template: path.resolve('src/client/views/index.html'),
-            minify: false
+            minify: true
         }),
         new CleanWebpackPlugin({
-            verbose: true,
+            verbose: false,
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false,
         })
@@ -39,12 +40,18 @@ const config = {
                 type: 'asset',
             },
             {
-                test: /\.css$/i,
+                test: /\.s[ac]ss$/i,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
                     },
-                    "css-loader"
+                    "css-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            implementation: sass,
+                        },
+                    },
                 ],
             },
             {   test: /\.js?$/,
