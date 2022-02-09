@@ -1,20 +1,18 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-
-const isProduction = process.env.NODE_ENV == 'production';
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const config = {
     mode: 'development',
     entry: {
         app: [
-            path.resolve(__dirname, 'src/client/styles/main.scss'),
-            path.resolve(__dirname, 'src/client/js/main.js')
+            path.resolve('src/client/styles/main.scss'),
+            path.resolve('src/client/js/main.js')
         ],
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve('dist'),
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
     },
@@ -22,7 +20,7 @@ const config = {
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             title: "Evaluate News",
-            template: path.resolve(__dirname,'src/client/views/index.html'),
+            template: path.resolve('src/client/views/index.html'),
             minify: false
         }),
         new CleanWebpackPlugin({
@@ -57,5 +55,5 @@ const config = {
     },
 };
 
-module.exports = config;
+export default config;
 
