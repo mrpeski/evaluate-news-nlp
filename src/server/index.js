@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
+app.use(express.static('dist'))
+
 app.route('/sentiment')
     .get(function(req,res){
         return res.json(process.env.API_KEY)
