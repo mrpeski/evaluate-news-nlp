@@ -5,6 +5,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const config = {
     mode: 'development',
+    devtool: 'source-map',
     entry: {
         app: [
             path.resolve('src/client/styles/main.scss'),
@@ -15,6 +16,8 @@ const config = {
         path: path.resolve('dist'),
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
+        library: 'ENLP',
+        libraryTarget: 'var'
     },
     plugins: [
         new MiniCssExtractPlugin(),
@@ -47,7 +50,7 @@ const config = {
                     "css-loader"
                 ],
             },
-            {   test: /\.(j)sx?$/,
+            {   test: /\.js?$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
             }
