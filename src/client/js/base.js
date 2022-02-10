@@ -53,7 +53,7 @@ export function updateUI(res){
 }
 
 function handleError(e){
-    alert("Error communicating with our servers. Please try again.");
+    alert("Error communicating with our servers. Please make sure the express server is running and then try again.");
     return console.log(e);
 }
 
