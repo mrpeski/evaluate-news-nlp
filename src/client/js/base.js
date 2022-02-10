@@ -25,7 +25,10 @@ export function handleSubmit(e) {
     fetchData(url)
         .then((res) => res.json(), handleError)
         .then(updateUI)
-        .catch((e) => console.log('Something happened.', e));
+        .catch((e) => {
+            document.querySelector("#result").innerHTML = null;
+            console.log('Something happened.', e)
+        });
 
 }
 
