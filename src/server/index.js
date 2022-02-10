@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import {FormData} from "formdata-node";
-import fetch from "node-fetch";
+import fetch from "isomorphic-fetch";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
