@@ -8,13 +8,17 @@
     <title>EmoWatch</title>
 </head>
 <body>
-<h1>EmoWatch</h1>
-<form id="main-from">
-    <input type="text" class="url" name="url"/>
-    <button type="submit" class="btn">Submit</button>
-</form>
-<div id="result"></div>
-
+<div class="wrapper">
+    <h1 class="title">EmoWatch</h1>
+    <h3 class="subtitle">
+        Evaluate a News Article with Natural Language Processing
+    </h3>
+    <form id="main-from">
+        <input type="text" class="url" name="url" placeholder="Enter article url here..."/>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <div id="result"></div>
+</div>
 <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
