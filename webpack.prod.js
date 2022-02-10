@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import sass from "sass";
+import WorkboxPlugin from "workbox-webpack-plugin";
 
 const config = {
     mode: 'production',
@@ -28,7 +29,9 @@ const config = {
             verbose: false,
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false,
-        })
+        }),
+        new WorkboxPlugin.GenerateSW()
+
     ],
     resolve: {
         extensions: [".js"]
