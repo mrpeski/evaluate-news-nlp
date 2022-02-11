@@ -1,7 +1,7 @@
 export const form = document.querySelector("#main-from");
-const baseUrl = "/.netlify/functions/express";
+
 export function fetchData(url) {
-    return fetch(`${baseUrl}/sentiment`, {
+    return fetch(`/sentiment`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({url})
@@ -35,6 +35,11 @@ export function isValidURL(test){
 }
 
 export function buildTable(res) {
+    // Display no credit status.
+    // {"status":{"code":"100","msg":"Operation denied","credits":"0"}}
+    if(res.hasOwnProperty("status") && !(res.status.msg === "OK")){
+        res = res.status;
+    }
     let keys = Object.keys(res).filter(item => (typeof res[item] === 'string'));
     let ths = '', tds = '';
     keys.forEach(item => {
