@@ -1,5 +1,3 @@
-import fetch from "isomorphic-fetch";
-
 export const form = document.querySelector("#main-from");
 const baseUrl = "/.netlify/functions/express";
 export function fetchData(url) {
