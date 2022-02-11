@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node src/server/index.js",
-    "deploy": "@build:prod && @netlify:fn:build",
+    "deploy": "npm run build:prod && npm run netlify:fn:build",
     "netlify:fn:build": "netlify-lambda build src/server",
     "netlify:fn:serve": "netlify-lambda serve src/server",
     "build:prod": "webpack --config webpack.prod.js",
