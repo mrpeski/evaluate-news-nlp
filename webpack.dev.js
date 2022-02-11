@@ -1,8 +1,8 @@
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import sass from "sass";
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const sass = require("sass");
 
 const config = {
     mode: 'development',
@@ -65,5 +65,5 @@ const config = {
     },
 };
 
-export default config;
+module.exports = config;
 

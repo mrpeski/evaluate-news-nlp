@@ -6,7 +6,6 @@
     "serve:dev": "webpack-dev-server  --config webpack.dev.js --open",
     "test": "jest"
   },
-  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
