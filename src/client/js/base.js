@@ -1,9 +1,9 @@
 import fetch from "isomorphic-fetch";
 
 export const form = document.querySelector("#main-from");
-
+const baseUrl = "/.netlify/functions/express";
 export function fetchData(url) {
-    return fetch('http://localhost:8081/sentiment', {
+    return fetch(`${baseUrl}/sentiment`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({url})
