@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const sass = require("sass");
 const WorkboxPlugin = require("workbox-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const config = {
     mode: 'production',
@@ -30,8 +31,8 @@ const config = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false,
         }),
-        new WorkboxPlugin.GenerateSW()
-
+        new WorkboxPlugin.GenerateSW(),
+        new Dotenv()
     ],
     resolve: {
         extensions: [".js"]

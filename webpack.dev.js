@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const sass = require("sass");
+const Dotenv = require("dotenv-webpack");
 
 const config = {
     mode: 'development',
@@ -31,7 +32,8 @@ const config = {
             verbose: true,
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false,
-        })
+        }),
+        new Dotenv()
     ],
     resolve: {
         extensions: [".js"]
