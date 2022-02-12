@@ -1,7 +1,11 @@
 export const form = document.querySelector("#main-from");
 
 export function fetchData(url) {
-    return fetch(`/sentiment`, {
+
+    // let routerBasePath = (process.env.NODE_ENV === 'production') ? `/.netlify/functions/express/` : `/`;
+    let routerBasePath = process.env.BASE_PATH ? process.env.BASE_PATH : '/';
+
+    return fetch(`${routerBasePath}sentiment`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({url})
