@@ -12,6 +12,12 @@ tests my ability to properly setup a single page application using webpack. Part
 1. This project runs on `Node.js`. In the root folder `npm install` to install it dependencies.
 2. Then run `npm run start` to start the express server.
 
+### Netlify Server (Optional)
+This project also allows for development with Netlify development server.
+Please follow the following instructions to develop with Netlify 
+1. This project runs on `Node.js`. In the root folder `npm install` to install it dependencies.
+2. Then run `npm run netlify:fn:serve` to start the serverless Netlify function.
+
 ### SPA Frontend
 This part of the project ensures that webpack is properly setup to handle two types of environment;
 1. Development
@@ -20,6 +26,11 @@ properly setup to afford a painless development experience.
 2. Production
 At the end development one simply `npm run build:prod` to build the production version of the app.
 Upon successful build, the express serve the serves the prod build at localhost:8081
+
+### Deployment
+This project is hosted on Netlify.
+1. Simply `npm run deploy` to deploy to Netlify.
+
 
 ## Extras
 This project was bootstrapped with the [skeleton project](https://github.com/udacity/fend-webpack-content) provided by
