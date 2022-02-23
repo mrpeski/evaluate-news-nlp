@@ -5,7 +5,6 @@
     "build:dev": "webpack  --config webpack.dev.js",
     "serve:dev": "webpack-dev-server  --config webpack.dev.js --open",
     "test": "jest",
-
     "deploy": "npm run build:prod2 && npm run netlify:fn:build",
     "build:prod2": "webpack --config webpack.netlify.js",
     "netlify:fn:build": "netlify-lambda build src/functions",
@@ -13,6 +12,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",

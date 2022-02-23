@@ -1,8 +1,9 @@
+
 export const form = document.querySelector("#main-from");
 
 export function fetchData(url) {
 
-    let routerBasePath =  process.env.BASE_PATH ? process.env.BASE_PATH : '/';
+    let routerBasePath =  process.env.NODE_ENV === 'development' ? process.env.DEV_SERVER_ADDRESS : process.env.BASE_PATH;
 
     return fetch(`${routerBasePath}sentiment`, {
         method: 'POST',
